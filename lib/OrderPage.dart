@@ -165,24 +165,36 @@ class _orderPageState extends State<orderPage> {
       ),
     );
   }
-  Container dateWidget(String day, String hour, bool isActive ){
-    return Container(
-      margin: EdgeInsets.only(right: 10),
-      padding: EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color:(isActive) ? Colors.green: Colors.grey.withOpacity(0.5),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(day, style: TextStyle(
-          color: (isActive) ? Colors.white : Colors.black,
-          fontSize: 15,
-        ) ,),
-        Text(hour, style: TextStyle(
-          color: (isActive) ? Colors.white : Colors.black,
-          fontSize: 15,
-        ) ,)],
+
+
+  InkWell dateWidget(String day, String hour, bool isActive ){
+    var _isActive = isActive;
+    return InkWell(
+    onTap: () {
+    setState(()
+    {_isActive = !_isActive; }
+    );
+    },
+      child: Container(
+        margin: EdgeInsets.only(right: 10),
+        padding: EdgeInsets.all(20),
+
+        decoration: BoxDecoration(
+          color:(_isActive) ? Colors.green: Colors.grey.withOpacity(0.5),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(day, style: TextStyle(
+            color: (_isActive) ? Colors.white : Colors.black,
+            fontSize: 15,
+          ), ),
+          Text(hour, style: TextStyle(
+            color: (_isActive) ? Colors.white : Colors.black,
+            fontSize: 15,
+          ), ),
+          ],
+        ),
       ),
     );
   }

@@ -91,7 +91,9 @@ class _pricePageState extends State<pricePage> {
                     clothWidget("Atkı", "12 TL"),
                   ],
                 ),
+
               ),
+
             ),
 
 
@@ -101,10 +103,79 @@ class _pricePageState extends State<pricePage> {
             ),
 
         ),),
+      bottomNavigationBar: BottomNavigationBar(
+        elevation: 20,
+        backgroundColor: Colors.white,
+        items: [
+          BottomNavigationBarItem(
+              icon: skipChoiceWidget(),
+              title: Text(""),
+
+          ),
+          BottomNavigationBarItem(
+              icon: totalWidget(),
+              title: Text(""),
+          ),
+
+
+        ],
+      ),
+
 
       );
   }
 
+  Container totalWidget() {
+    return Container(
+      padding: EdgeInsets.all(5),
+      height: 70,
+      width: MediaQuery.of(context).size.width*0.50,
+      decoration: BoxDecoration(
+        color: Colors.white
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("TOPLAM", style: TextStyle(
+            color: Colors.grey,
+            fontSize: 13,
+            fontWeight: FontWeight.w700,
+          ),),
+          Text("200 TL", style: TextStyle(
+            color: Colors.green,
+            fontSize: 16,
+            fontWeight: FontWeight.w700,
+          ),),
+        ],
+      ),
+    );
+  }
+
+  Container skipChoiceWidget(){
+    return Container(
+      child:  InkWell(
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) =>OrderPage()));
+        },
+        child: Container(
+          padding: EdgeInsets.all(5),
+          height: 70,
+          width: MediaQuery.of(context).size.width*0.50,
+          decoration: BoxDecoration(
+            color: Colors.green,
+
+          ),
+          child: Center(
+            child: Text("Ürün Seçimini Atla", style: TextStyle(
+              color: Colors.white,
+              fontSize: 15,
+              fontWeight: FontWeight.w700,
+            ),),
+          ),
+        ),
+      ),
+    );
+  }
   Container clothWidget(String name, String price){
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
