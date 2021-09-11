@@ -2,6 +2,7 @@ import 'package:app_theme/OrderConfirmPage.dart';
 import 'package:flutter/material.dart';
 import 'package:app_theme/HomePage.dart';
 import 'package:app_theme/OrderConfirmPage.dart';
+import 'package:app_theme/MorePage.dart';
 
 class OrderPage extends StatelessWidget {
   const OrderPage({Key? key}) : super(key: key);

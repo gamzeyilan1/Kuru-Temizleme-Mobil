@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:app_theme/HomePage.dart';
 import 'package:app_theme/PricePage.dart';
 import 'package:app_theme/OrderPage.dart';
+import 'package:app_theme/MorePage.dart';
 
 class SupportPage extends StatelessWidget {
   const SupportPage({Key? key}) : super(key: key);
@@ -35,6 +36,9 @@ class _supportPageState extends State<supportPage> {
         break;
       case 2:
         Navigator.push(context, MaterialPageRoute(builder: (context) => OrderPage()));
+        break;
+      case 4:
+        Navigator.push(context, MaterialPageRoute(builder: (context) => MorePage()));
         break;
 
     }

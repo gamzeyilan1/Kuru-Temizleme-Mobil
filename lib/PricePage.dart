@@ -3,7 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:app_theme/HomePage.dart';
 import 'package:app_theme/OrderPage.dart';
-
+import 'package:app_theme/SupportPage.dart';
+import 'package:app_theme/MorePage.dart';
 class PricePage extends StatelessWidget {
   const PricePage({Key? key}) : super(key: key);
 
@@ -24,8 +25,26 @@ class pricePage extends StatefulWidget {
 }
 
 class _pricePageState extends State<pricePage> {
+  int _index = 1;
   @override
   Widget build(BuildContext context) {
+    Widget child;
+    switch (_index) {
+      case 0:
+        Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+        break;
+      case 1:
+        break;
+      case 2:
+        Navigator.push(context, MaterialPageRoute(builder: (context) => OrderPage()));
+        break;
+      case 3:
+        Navigator.push(context, MaterialPageRoute(builder: (context) => SupportPage()));
+        break;
+      case 4:
+        Navigator.push(context, MaterialPageRoute(builder: (context) => MorePage()));
+        break;
+    }
     return Scaffold(
       resizeToAvoidBottomInset: false, // set it to false
       appBar: AppBar(
@@ -53,9 +72,12 @@ class _pricePageState extends State<pricePage> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-      child:
-      Container(
+      body: Stack(
+         children: <Widget>[
+          ListView(
+            children: [
+                 SingleChildScrollView(
+                   child: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("asset/images/bg.png"),
@@ -102,25 +124,62 @@ class _pricePageState extends State<pricePage> {
 
             ),
 
-        ),),
-      bottomNavigationBar: BottomNavigationBar(
-        elevation: 20,
-        backgroundColor: Colors.white,
+        ),
+
+
+                 ),
+
+
+             ],
+
+          ),
+          new Positioned(
+          left: 0,
+          right: 0,
+          top: 550.0,
+          child: new Container(
+            width: MediaQuery.of(context).size.width,
+            height: 150.0,
+            decoration: new BoxDecoration(color: Colors.red),
+            child: Column(
+              children: [
+
+                skipChoiceWidget(),
+                totalWidget(),
+              ],
+            ),
+          )
+      ), ],),
+
+          bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: Colors.green,
+        iconSize: 30,
+        onTap: (newIndex) => setState(() => _index = newIndex),
+        currentIndex: _index,
         items: [
           BottomNavigationBarItem(
-              icon: skipChoiceWidget(),
-              title: Text(""),
-
+            icon: Icon(Icons.view_list),
+            title: Text("Siparişlerim"),
           ),
           BottomNavigationBarItem(
-              icon: totalWidget(),
-              title: Text(""),
+            icon: Icon(Icons.more),
+            title: Text("Fiyat"),
           ),
-
-
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_circle_outlined),
+            title: Text("Yeni Sipariş"),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.chat_bubble_rounded),
+            title: Text("İletişim"),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.keyboard_control_rounded),
+            title: Text("Daha Fazla"),
+          ),
         ],
       ),
-
 
       );
   }
@@ -129,25 +188,49 @@ class _pricePageState extends State<pricePage> {
     return Container(
       padding: EdgeInsets.all(5),
       height: 70,
-      width: MediaQuery.of(context).size.width*0.50,
+      width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         color: Colors.white
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child:
+          Column(
+            children: [
+      Row(
         children: [
-          Text("TOPLAM", style: TextStyle(
-            color: Colors.grey,
-            fontSize: 13,
-            fontWeight: FontWeight.w700,
-          ),),
-          Text("200 TL", style: TextStyle(
+          Container(
+            padding: EdgeInsets.only(left:  20,),
+             child: Text("TOPLAM", style: TextStyle(
+               color: Colors.grey,
+               fontSize: 13,
+               fontWeight: FontWeight.w700,
+
+          ),),),
+          SizedBox(width: 230,),
+          Container(
+            padding: EdgeInsets.only(right:  20,),
+            child: Text("200 TL", style: TextStyle(
             color: Colors.green,
-            fontSize: 16,
+            fontSize: 18,
             fontWeight: FontWeight.w700,
-          ),),
+          ),),),
         ],
       ),
+              SizedBox(height: 5,),
+              Row(
+
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text("Tüm indirimler dahil minimum sepet tutarı 49 lira olmalıdır.", style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+
+                ),),
+               ],
+              ),
+            ],
+
+          ),
     );
   }
 
@@ -157,20 +240,40 @@ class _pricePageState extends State<pricePage> {
         onTap: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) =>OrderPage()));
         },
+
         child: Container(
           padding: EdgeInsets.all(5),
-          height: 70,
-          width: MediaQuery.of(context).size.width*0.50,
+          height: 50,
+          width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             color: Colors.green,
-
           ),
           child: Center(
-            child: Text("Ürün Seçimini Atla", style: TextStyle(
-              color: Colors.white,
-              fontSize: 15,
-              fontWeight: FontWeight.w700,
-            ),),
+            child:
+              RichText(
+
+                text: TextSpan(
+
+                  children: [
+                    TextSpan(
+                      text: "Ürün Seçimini Atla",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+
+                      ),
+                    ),
+                    WidgetSpan(
+
+                      child: Padding(
+                        padding: const EdgeInsets.all(1),
+                        child: Icon(Icons.arrow_forward_ios, size: 14,  color: Colors.white,   ),),
+
+                    ),
+                  ],
+                ),
+              )
           ),
         ),
       ),

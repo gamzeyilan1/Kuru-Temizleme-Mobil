@@ -4,6 +4,7 @@ import 'package:app_theme/StyleScheme.dart';
 import 'package:app_theme/OrderPage.dart';
 import 'package:app_theme/PricePage.dart';
 import 'package:app_theme/SupportPage.dart';
+import 'package:app_theme/MorePage.dart';
 
 
 class HomePage extends StatelessWidget {
@@ -42,6 +43,9 @@ class _homePageState extends State<homePage> {
         break;
       case 3:
         Navigator.push(context, MaterialPageRoute(builder: (context) => SupportPage()));
+        break;
+        case 4:
+        Navigator.push(context, MaterialPageRoute(builder: (context) => MorePage()));
         break;
     }
     return Scaffold(
