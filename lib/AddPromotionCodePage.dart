@@ -43,6 +43,13 @@ class _addPromotionCodePageState extends State<addPromotionCodePage> {
         ),),
       ),
       body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("asset/images/bg.png"),
+              fit: BoxFit.fill,
+
+            )
+        ),
         child: Align(
           alignment: Alignment.center,
           child:

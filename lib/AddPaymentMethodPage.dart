@@ -43,6 +43,15 @@ class _addPaymentMethodPageState extends State<addPaymentMethodPage> {
           fontFamily: 'sfpro',
         ),),
       ),
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("asset/images/bg.png"),
+              fit: BoxFit.fill,
+
+            )
+        ),
+      ),
     );
   }
   void openPaymentMethodPage(){

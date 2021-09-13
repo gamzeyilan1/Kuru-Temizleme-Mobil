@@ -1,27 +1,25 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:app_theme/MorePage.dart';
-import 'package:app_theme/AddPromotionCodePage.dart';
-
-class MyPromotionCodesPage extends StatelessWidget {
-  const MyPromotionCodesPage({Key? key}) : super(key: key);
+class FreeServicesPage extends StatelessWidget {
+  const FreeServicesPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: myPromotionCodesPage(),
+     debugShowCheckedModeBanner: false,
+        home: freeServicesPage(),
     );
   }
 }
-
-class myPromotionCodesPage extends StatefulWidget {
-  const myPromotionCodesPage({Key? key}) : super(key: key);
+class freeServicesPage extends StatefulWidget {
+  const freeServicesPage({Key? key}) : super(key: key);
 
   @override
-  _myPromotionCodesPageState createState() => _myPromotionCodesPageState();
+  _freeServicesPageState createState() => _freeServicesPageState();
 }
 
-class _myPromotionCodesPageState extends State<myPromotionCodesPage> {
+class _freeServicesPageState extends State<freeServicesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,21 +27,15 @@ class _myPromotionCodesPageState extends State<myPromotionCodesPage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        shape: Border(bottom: BorderSide(color: Colors.green, width: 3)),
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios),
           color: Colors.green,
           onPressed: openMorePage,
         ),
 
-        title: Text("Promosyon Kodlarım", style: TextStyle(
-          fontSize: 18,
-          color: Colors.black,
-          fontWeight: FontWeight.w700,
-          fontFamily: 'sfpro',
-        ),),
       ),
-      body:  Container(
+      body:
+      Container(
         decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("asset/images/bg.png"),
@@ -59,15 +51,50 @@ class _myPromotionCodesPageState extends State<myPromotionCodesPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Column(
+                children: [
+                  Image(
+                    image: AssetImage("asset/images/gift-box.png"),
+                    alignment: Alignment.topCenter,
+                  ),
+                  SizedBox(height: 25,),
+                Text("Ücretsiz Kuru Temizleme, Çamaşır, \n Ütü ve Ayakkabı Bakımı", style: TextStyle(
+                fontSize: 18,
+                color: Colors.grey,
+                fontWeight: FontWeight.w700,
+                fontFamily: 'sfpro',
+              ), textAlign: TextAlign.center),
+              SizedBox(height: 10,),
+
+              Text("20 TL gönder 20 TL kazan", style: TextStyle(
+                fontSize: 14,
+                color: Colors.grey,
+                fontWeight: FontWeight.w700,
+                fontFamily: 'sfpro',
+              ),),
+                  SizedBox(height: 10,),
+
+              Text("Promosyon Kodunu Gönder", style: TextStyle(
+                fontSize: 14,
+                color: Colors.grey,
+                fontWeight: FontWeight.w700,
+                fontFamily: 'sfpro',
+              ),),
+                  SizedBox(height: 10,),
+              Text("AAAAA", style: TextStyle(
+                fontSize: 26,
+                color: Colors.black,
+                fontWeight: FontWeight.w700,
+                fontFamily: 'sfpro',
+              ),),
+                  SizedBox(height: 10,),
               InkWell(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) =>AddPromotionCodePage()));
                 },
 
                 child: Container(
                   width: MediaQuery.of(context).size.width*0.80,
                   padding: EdgeInsets.all(5),
-                  margin: EdgeInsets.all(10),
                   height: 50,
                   decoration: BoxDecoration(
                     color: Colors.green,
@@ -100,14 +127,14 @@ class _myPromotionCodesPageState extends State<myPromotionCodesPage> {
                       )
                   ),
                 ),
-              ),
+              ),],),
             ],
           ),),
       ),
+
     );
   }
   void openMorePage(){
-    Navigator.push(context, MaterialPageRoute(builder: (context) =>MorePage()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => MorePage()));
   }
 }
-

@@ -72,7 +72,16 @@ class _pricePageState extends State<pricePage> {
           ),
         ],
       ),
-      body: Stack(
+      body:
+      Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("asset/images/bg.png"),
+              fit: BoxFit.fill,
+
+            )
+        ),
+      child: Stack(
          children: <Widget>[
           ListView(
             children: [
@@ -149,7 +158,7 @@ class _pricePageState extends State<pricePage> {
               ],
             ),
           )
-      ), ],),
+      ), ],),),
 
           bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,

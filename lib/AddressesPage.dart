@@ -51,8 +51,16 @@ class _addressesPageState extends State<addressesPage> {
           ),
         ],
       ),
-      body:
-            ListView(
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("asset/images/bg.png"),
+              fit: BoxFit.fill,
+
+            )
+        ),
+            child: ListView(
+
           children: [
           Row(
             children: <Widget>[
@@ -80,7 +88,7 @@ class _addressesPageState extends State<addressesPage> {
           ),
 
         ],
-      ),
+      ),),
 
 
 

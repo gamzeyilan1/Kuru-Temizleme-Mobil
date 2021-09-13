@@ -1,11 +1,14 @@
 import 'package:app_theme/AddPromotionCodePage.dart';
 import 'package:app_theme/AddressesPage.dart';
 import 'package:app_theme/CampaignsPage.dart';
+import 'package:app_theme/FreeServicesPage.dart';
 import 'package:app_theme/HowItWorksPage.dart';
 import 'package:app_theme/MyPromotionCodesPage.dart';
 import 'package:app_theme/OrderHistoryPage.dart';
 import 'package:app_theme/PaymentMethodsPage.dart';
 import 'package:app_theme/PricePage.dart';
+import 'package:app_theme/ProfilePage.dart';
+import 'package:app_theme/TermsAndConditionsPage.dart';
 import 'package:flutter/material.dart';
 import 'package:app_theme/HomePage.dart';
 import 'package:app_theme/OrderPage.dart';
@@ -71,6 +74,13 @@ class _morePageState extends State<morePage> {
 
       ),
       body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("asset/images/bg.png"),
+              fit: BoxFit.fill,
+
+            )
+        ),
         child: Column(
           children: [
             Row(
@@ -441,7 +451,7 @@ class _morePageState extends State<morePage> {
               children: <Widget>[
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) =>OrderPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => FreeServicesPage()));
                   },
 
                   child: Container(
@@ -493,7 +503,7 @@ class _morePageState extends State<morePage> {
               children: <Widget>[
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) =>OrderPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) =>TermsAndConditionsPage()));
                   },
 
                   child: Container(
@@ -545,7 +555,7 @@ class _morePageState extends State<morePage> {
               children: <Widget>[
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) =>OrderPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) =>ProfilePage()));
                   },
 
                   child: Container(

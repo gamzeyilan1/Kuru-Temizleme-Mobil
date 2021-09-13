@@ -44,8 +44,14 @@ class _orderHistoryPageState extends State<orderHistoryPage> {
         ),),
 
       ),
-      body: Column(
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("asset/images/bg.png"),
+              fit: BoxFit.fill,
 
+            )
+        ),
       ),
     );
   }

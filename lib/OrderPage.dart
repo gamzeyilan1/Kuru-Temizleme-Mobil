@@ -25,7 +25,14 @@ class orderPage extends StatefulWidget {
 }
 
 class _orderPageState extends State<orderPage> {
+  String valueChoose = "";
+  final items = [
+    "Address 1", "Address 2", "Address 3", "Address 4",
+  ];
+  String? value;
+
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -94,17 +101,12 @@ class _orderPageState extends State<orderPage> {
               fontFamily: 'sfpro',
             ),),
             SizedBox(height: 8,),
-            DropdownButton<String>(
+            DropdownButton <String> (
               isExpanded: true,
               hint: Text("Lütfen bir adres seçin"),
-              items: <String>['Address 1', 'Address 2','Address 3','Address 4',].map((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-
-                );
-              }).toList(),
-              onChanged: (_) {},
+              value: value,
+              items: items.map(buildMenuItem).toList(),
+              onChanged: (value )=> setState( () => this.value = value),
             ),
 
             SizedBox(height: 8,),
@@ -165,9 +167,22 @@ class _orderPageState extends State<orderPage> {
         ),
       ),
     );
+
   }
 
-
+  DropdownMenuItem <String> buildMenuItem(String item) =>
+      DropdownMenuItem(
+        value: item,
+        child: Text(
+          item,
+          style: TextStyle(
+            fontSize: 14,
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+            fontFamily: 'sfpro',
+          ),
+        ),
+      );
   InkWell dateWidget(String day, String hour, bool isActive ){
     var _isActive = isActive;
     return InkWell(

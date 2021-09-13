@@ -1,27 +1,26 @@
-import 'package:app_theme/MorePage.dart';
 import 'package:flutter/material.dart';
-import 'package:app_theme/HomePage.dart';
+import 'package:app_theme/MorePage.dart';
 
-class HowItWorksPage extends StatelessWidget {
-  const HowItWorksPage({Key? key}) : super(key: key);
+class TermsAndConditionsPage extends StatelessWidget {
+  const TermsAndConditionsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: howItWorksPage(),
+      home: termsAndConditionsPage(),
     );
   }
 }
 
-class howItWorksPage extends StatefulWidget {
-  const howItWorksPage({Key? key}) : super(key: key);
+class termsAndConditionsPage extends StatefulWidget {
+  const termsAndConditionsPage({Key? key}) : super(key: key);
 
   @override
-  _howItWorksPageState createState() => _howItWorksPageState();
+  _termsAndConditionsPageState createState() => _termsAndConditionsPageState();
 }
 
-class _howItWorksPageState extends State<howItWorksPage> {
+class _termsAndConditionsPageState extends State<termsAndConditionsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +35,7 @@ class _howItWorksPageState extends State<howItWorksPage> {
           onPressed: openMorePage,
         ),
 
-        title: Text("Sipariş Oluştur", style: TextStyle(
+        title: Text("Gizlilik Sözleşmesi", style: TextStyle(
           fontSize: 18,
           color: Colors.black,
           fontWeight: FontWeight.w700,
@@ -51,13 +50,12 @@ class _howItWorksPageState extends State<howItWorksPage> {
 
             )
         ),
-      child: Column(
-
+     child:  Column(
         children: [
           SizedBox(height: 8,),
           Text("Lorem ipsum dolor sit amet", style: TextStyle(
             fontSize: 18,
-            color: Colors.green,
+            color: Colors.black,
             fontWeight: FontWeight.w700,
             fontFamily: 'sfpro',
           ),),
@@ -65,16 +63,16 @@ class _howItWorksPageState extends State<howItWorksPage> {
           Padding(
             padding: EdgeInsets.all(10),
             child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ", style: TextStyle(
-            fontSize: 15,
-            color: Colors.black,
-            fontWeight: FontWeight.w500,
-            fontFamily: 'sfpro',
-          ),),),
+              fontSize: 15,
+              color: Colors.black,
+              fontWeight: FontWeight.w500,
+              fontFamily: 'sfpro',
+            ),),),
 
           SizedBox(height: 8,),
           Text("Lorem ipsum dolor sit amet", style: TextStyle(
             fontSize: 18,
-            color: Colors.green,
+            color: Colors.black,
             fontWeight: FontWeight.w700,
             fontFamily: 'sfpro',
           ),),
@@ -82,20 +80,18 @@ class _howItWorksPageState extends State<howItWorksPage> {
           Padding(
             padding: EdgeInsets.all(10),
             child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ", style: TextStyle(
-            fontSize: 15,
-            color: Colors.black,
-            fontWeight: FontWeight.w500,
-            fontFamily: 'sfpro',
-          ),),),
+              fontSize: 15,
+              color: Colors.black,
+              fontWeight: FontWeight.w500,
+              fontFamily: 'sfpro',
+            ),),),
           SizedBox(height: 8,),
         ],
 
       ),),
     );
   }
-
   void openMorePage(){
-    Navigator.push(context, MaterialPageRoute(builder: (context) =>MorePage()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => MorePage()));
   }
 }
-

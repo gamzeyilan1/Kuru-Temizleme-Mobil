@@ -43,7 +43,16 @@ class _addNewAddressPageState extends State<addNewAddressPage> {
         ),),
 
       ),
-      body: Form(
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("asset/images/bg.png"),
+              fit: BoxFit.fill,
+
+            )
+        ),
+      child: Form(
+
         key: _formKey,
         child:
         Center(
@@ -152,7 +161,7 @@ class _addNewAddressPageState extends State<addNewAddressPage> {
       ),),
 
 
-    ), );
+    ), ),);
   }
   void openAddressesPage(){
     Navigator.push(context, MaterialPageRoute(builder: (context) => AddressesPage()));

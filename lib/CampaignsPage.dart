@@ -43,6 +43,13 @@ class _campaignsPageState extends State<campaignsPage> {
         ),),
       ),
       body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("asset/images/bg.png"),
+              fit: BoxFit.fill,
+
+            )
+        ),
         child: SingleChildScrollView(
           child: Column(
             children: [
