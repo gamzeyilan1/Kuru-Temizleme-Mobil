@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:app_theme/HomePage.dart';
-import 'package:app_theme/PricePage.dart';
-import 'package:app_theme/OrderPage.dart';
-import 'package:app_theme/MorePage.dart';
+import 'package:app_theme/screens/HomePage.dart';
+import 'package:app_theme/screens/PricePage.dart';
+import 'package:app_theme/screens/OrderPage.dart';
+import 'package:app_theme/screens/MorePage.dart';
 
 class SupportPage extends StatelessWidget {
   const SupportPage({Key? key}) : super(key: key);
@@ -72,7 +72,7 @@ class _supportPageState extends State<supportPage> {
                 fontSize: 14,
                 color: Colors.grey,
                 fontWeight: FontWeight.w500,
-                fontFamily: 'sfpro',
+
               ),),
 
 
@@ -134,7 +134,7 @@ class _supportPageState extends State<supportPage> {
                     fontSize: 14,
                     color: Colors.black,
                     fontWeight: FontWeight.w500,
-                    fontFamily: 'sfpro',
+
                   ),
                   ),
 
@@ -146,7 +146,7 @@ class _supportPageState extends State<supportPage> {
               fontSize: 14,
               color: Colors.green,
               fontWeight: FontWeight.w500,
-              fontFamily: 'sfpro',
+
             ),),
             SizedBox(height: 20,),
             RichText(
@@ -162,7 +162,7 @@ class _supportPageState extends State<supportPage> {
                     fontSize: 14,
                     color: Colors.black,
                     fontWeight: FontWeight.w500,
-                    fontFamily: 'sfpro',
+
                   ),
                   ),
 
@@ -174,7 +174,7 @@ class _supportPageState extends State<supportPage> {
               fontSize: 14,
               color: Colors.green,
               fontWeight: FontWeight.w500,
-              fontFamily: 'sfpro',
+
             ),),
           ],
         ),

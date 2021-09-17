@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app_theme/MorePage.dart';
+import 'package:app_theme/screens/MorePage.dart';
 
 class AddPromotionCodePage extends StatelessWidget {
   const AddPromotionCodePage({Key? key}) : super(key: key);
@@ -24,6 +24,7 @@ class _addPromotionCodePageState extends State<addPromotionCodePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -39,7 +40,7 @@ class _addPromotionCodePageState extends State<addPromotionCodePage> {
           fontSize: 18,
           color: Colors.black,
           fontWeight: FontWeight.w700,
-          fontFamily: 'sfpro',
+
         ),),
       ),
       body: Container(
@@ -62,7 +63,7 @@ class _addPromotionCodePageState extends State<addPromotionCodePage> {
             fontSize: 15,
             color: Colors.grey,
             fontWeight: FontWeight.w500,
-            fontFamily: 'sfpro',
+
           ),),
           SizedBox(height: 20,),
           TextFormField(

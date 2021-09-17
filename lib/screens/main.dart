@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'LoginPage.dart';
 import 'dart:async';
+import '../providers/services_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,9 +12,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+    return ChangeNotifierProvider(
+      create: (ctx) => Services(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          fontFamily: 'sfpro',
+        ),
+        home: MyHomePage(),
+      ),
     );
   }
 }
@@ -54,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
           )
 
       ),
+
     );
 
 

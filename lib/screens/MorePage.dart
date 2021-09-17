@@ -1,18 +1,18 @@
-import 'package:app_theme/AddPromotionCodePage.dart';
-import 'package:app_theme/AddressesPage.dart';
-import 'package:app_theme/CampaignsPage.dart';
-import 'package:app_theme/FreeServicesPage.dart';
-import 'package:app_theme/HowItWorksPage.dart';
-import 'package:app_theme/MyPromotionCodesPage.dart';
-import 'package:app_theme/OrderHistoryPage.dart';
-import 'package:app_theme/PaymentMethodsPage.dart';
-import 'package:app_theme/PricePage.dart';
-import 'package:app_theme/ProfilePage.dart';
-import 'package:app_theme/TermsAndConditionsPage.dart';
+import 'package:app_theme/screens/AddPromotionCodePage.dart';
+import 'package:app_theme/screens/AddressesPage.dart';
+import 'package:app_theme/screens/CampaignsPage.dart';
+import 'package:app_theme/screens/FreeServicesPage.dart';
+import 'package:app_theme/screens/HowItWorksPage.dart';
+import 'package:app_theme/screens/MyPromotionCodesPage.dart';
+import 'package:app_theme/screens/OrderHistoryPage.dart';
+import 'package:app_theme/screens/PaymentMethodsPage.dart';
+import 'package:app_theme/screens/PricePage.dart';
+import 'package:app_theme/screens/ProfilePage.dart';
+import 'package:app_theme/screens/TermsAndConditionsPage.dart';
 import 'package:flutter/material.dart';
-import 'package:app_theme/HomePage.dart';
-import 'package:app_theme/OrderPage.dart';
-import 'package:app_theme/SupportPage.dart';
+import 'package:app_theme/screens/HomePage.dart';
+import 'package:app_theme/screens/OrderPage.dart';
+import 'package:app_theme/screens/SupportPage.dart';
 
 class MorePage extends StatelessWidget {
   const MorePage({Key? key}) : super(key: key);
@@ -69,7 +69,7 @@ class _morePageState extends State<morePage> {
           fontSize: 18,
           color: Colors.black,
           fontWeight: FontWeight.w700,
-          fontFamily: 'sfpro',
+
         ),),
 
       ),

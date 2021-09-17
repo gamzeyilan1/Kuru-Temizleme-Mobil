@@ -1,7 +1,7 @@
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
-import 'package:app_theme/SignUpPage.dart';
-import 'package:app_theme/HomePage.dart';
+import 'package:app_theme/screens/SignUpPage.dart';
+import 'package:app_theme/screens/HomePage.dart';
 //
 // class LoginPage extends StatelessWidget {
 //   const LoginPage({Key? key}) : super(key: key);
@@ -26,6 +26,7 @@ class _loginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       resizeToAvoidBottomInset: false,
 body: Container(
   decoration: BoxDecoration(
       image: DecorationImage(
@@ -56,7 +57,7 @@ body: Container(
                fontSize: 30,
                color: Colors.green,
                fontWeight: FontWeight.w700,
-              fontFamily: 'sfpro',
+
            ),),
             Text("Lütfen Giriş Yapın.", style: TextStyle(
               color: Colors.grey,
@@ -98,7 +99,7 @@ body: Container(
                     color: Colors.white,
                     fontSize: 22,
                     fontWeight: FontWeight.w700,
-                    fontFamily: 'sfpro',
+
                   ),),
                 )
               ),
@@ -184,7 +185,7 @@ body: Container(
           Text("Hesabınız mı yok?", style: TextStyle(
               color: Colors.grey,
               fontSize: 16,
-            fontFamily: 'sfpro',
+
           ),),
           SizedBox(width: 5,),
           InkWell(

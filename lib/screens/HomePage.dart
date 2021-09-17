@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:app_theme/StyleScheme.dart';
-import 'package:app_theme/OrderPage.dart';
-import 'package:app_theme/PricePage.dart';
-import 'package:app_theme/SupportPage.dart';
-import 'package:app_theme/MorePage.dart';
+import 'package:app_theme/screens/OrderPage.dart';
+import 'package:app_theme/screens/PricePage.dart';
+import 'package:app_theme/screens/SupportPage.dart';
+import 'package:app_theme/screens/MorePage.dart';
 
 
 class HomePage extends StatelessWidget {

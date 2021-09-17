@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:app_theme/MorePage.dart';
-import 'package:app_theme/AddPromotionCodePage.dart';
+import 'package:app_theme/screens/MorePage.dart';
+import 'package:app_theme/screens/AddPromotionCodePage.dart';
 
 class MyPromotionCodesPage extends StatelessWidget {
   const MyPromotionCodesPage({Key? key}) : super(key: key);
@@ -40,7 +40,7 @@ class _myPromotionCodesPageState extends State<myPromotionCodesPage> {
           fontSize: 18,
           color: Colors.black,
           fontWeight: FontWeight.w700,
-          fontFamily: 'sfpro',
+
         ),),
       ),
       body:  Container(

@@ -1,4 +1,4 @@
-import 'package:app_theme/AddressesPage.dart';
+import 'package:app_theme/screens/AddressesPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class AddNewAddressPage extends StatelessWidget {
@@ -39,7 +39,7 @@ class _addNewAddressPageState extends State<addNewAddressPage> {
           fontSize: 18,
           color: Colors.black,
           fontWeight: FontWeight.w700,
-          fontFamily: 'sfpro',
+
         ),),
 
       ),

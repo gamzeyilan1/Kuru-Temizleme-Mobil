@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app_theme/HomePage.dart';
+import 'package:app_theme/screens/HomePage.dart';
 class OrderConfirmPage extends StatelessWidget {
   const OrderConfirmPage({Key? key}) : super(key: key);
 
@@ -50,7 +50,7 @@ class _orderConfirmPageState extends State<orderConfirmPage> {
           fontSize: 18,
           color: Colors.black,
           fontWeight: FontWeight.w700,
-          fontFamily: 'sfpro',
+
         ),),
       ),
       body: Container(
@@ -68,7 +68,7 @@ class _orderConfirmPageState extends State<orderConfirmPage> {
                    fontSize: 15,
                    color: Colors.black,
                    fontWeight: FontWeight.w700,
-                  fontFamily: 'sfpro',
+
                    ),),
             DropdownButton <String> (
               isExpanded: true,
@@ -82,7 +82,7 @@ class _orderConfirmPageState extends State<orderConfirmPage> {
               fontSize: 15,
               color: Colors.black,
               fontWeight: FontWeight.w700,
-              fontFamily: 'sfpro',
+
             ),),
             DropdownButton <String> (
               isExpanded: true,
@@ -96,7 +96,7 @@ class _orderConfirmPageState extends State<orderConfirmPage> {
               fontSize: 14,
               color: Colors.grey,
               fontWeight: FontWeight.w500,
-              fontFamily: 'sfpro',
+
             ),),
             SizedBox(height: 8,),
             Row(
@@ -117,14 +117,14 @@ class _orderConfirmPageState extends State<orderConfirmPage> {
               fontSize: 12,
               color: Colors.grey,
               fontWeight: FontWeight.w500,
-              fontFamily: 'sfpro',
+
             ),),],),
             SizedBox(height: 300,),
             Text("Promosyon kodu ekleyin.", style: TextStyle(
               fontSize: 14,
               color: Colors.grey,
               fontWeight: FontWeight.w500,
-              fontFamily: 'sfpro',
+
             ),),
             SizedBox(height: 10,),
             InkWell(
@@ -161,7 +161,7 @@ class _orderConfirmPageState extends State<orderConfirmPage> {
             fontSize: 14,
             color: Colors.black,
             fontWeight: FontWeight.w500,
-            fontFamily: 'sfpro',
+
           ),
         ),
       );
@@ -175,7 +175,7 @@ class _orderConfirmPageState extends State<orderConfirmPage> {
             fontSize: 14,
             color: Colors.black,
             fontWeight: FontWeight.w500,
-            fontFamily: 'sfpro',
+
           ),
         ),
       );

@@ -1,6 +1,6 @@
-import 'package:app_theme/MorePage.dart';
+import 'package:app_theme/screens/MorePage.dart';
 import 'package:flutter/material.dart';
-import 'package:app_theme/HomePage.dart';
+import 'package:app_theme/screens/HomePage.dart';
 
 class HowItWorksPage extends StatelessWidget {
   const HowItWorksPage({Key? key}) : super(key: key);
@@ -40,7 +40,7 @@ class _howItWorksPageState extends State<howItWorksPage> {
           fontSize: 18,
           color: Colors.black,
           fontWeight: FontWeight.w700,
-          fontFamily: 'sfpro',
+
         ),),
       ),
       body: Container(
@@ -59,7 +59,7 @@ class _howItWorksPageState extends State<howItWorksPage> {
             fontSize: 18,
             color: Colors.green,
             fontWeight: FontWeight.w700,
-            fontFamily: 'sfpro',
+
           ),),
           SizedBox(height: 8,),
           Padding(
@@ -68,7 +68,7 @@ class _howItWorksPageState extends State<howItWorksPage> {
             fontSize: 15,
             color: Colors.black,
             fontWeight: FontWeight.w500,
-            fontFamily: 'sfpro',
+
           ),),),
 
           SizedBox(height: 8,),
@@ -76,7 +76,7 @@ class _howItWorksPageState extends State<howItWorksPage> {
             fontSize: 18,
             color: Colors.green,
             fontWeight: FontWeight.w700,
-            fontFamily: 'sfpro',
+
           ),),
           SizedBox(height: 8,),
           Padding(
@@ -85,7 +85,7 @@ class _howItWorksPageState extends State<howItWorksPage> {
             fontSize: 15,
             color: Colors.black,
             fontWeight: FontWeight.w500,
-            fontFamily: 'sfpro',
+
           ),),),
           SizedBox(height: 8,),
         ],

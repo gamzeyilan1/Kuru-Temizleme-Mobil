@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:app_theme/MorePage.dart';
+import 'package:app_theme/screens/MorePage.dart';
 class FreeServicesPage extends StatelessWidget {
   const FreeServicesPage({Key? key}) : super(key: key);
 
@@ -62,7 +62,6 @@ class _freeServicesPageState extends State<freeServicesPage> {
                 fontSize: 18,
                 color: Colors.grey,
                 fontWeight: FontWeight.w700,
-                fontFamily: 'sfpro',
               ), textAlign: TextAlign.center),
               SizedBox(height: 10,),
 
@@ -70,7 +69,7 @@ class _freeServicesPageState extends State<freeServicesPage> {
                 fontSize: 14,
                 color: Colors.grey,
                 fontWeight: FontWeight.w700,
-                fontFamily: 'sfpro',
+
               ),),
                   SizedBox(height: 10,),
 
@@ -78,14 +77,14 @@ class _freeServicesPageState extends State<freeServicesPage> {
                 fontSize: 14,
                 color: Colors.grey,
                 fontWeight: FontWeight.w700,
-                fontFamily: 'sfpro',
+
               ),),
                   SizedBox(height: 10,),
               Text("AAAAA", style: TextStyle(
                 fontSize: 26,
                 color: Colors.black,
                 fontWeight: FontWeight.w700,
-                fontFamily: 'sfpro',
+
               ),),
                   SizedBox(height: 10,),
               InkWell(

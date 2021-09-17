@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:app_theme/MorePage.dart';
-import 'package:app_theme/AddPaymentMethodPage.dart';
+import 'package:app_theme/screens/MorePage.dart';
+import 'package:app_theme/screens/AddPaymentMethodPage.dart';
 
 
 class PaymentMethodsPage extends StatelessWidget {
@@ -41,7 +41,6 @@ class _paymentMethodsPageState extends State<paymentMethodsPage> {
           fontSize: 18,
           color: Colors.black,
           fontWeight: FontWeight.w700,
-          fontFamily: 'sfpro',
         ),),
       ),
       body:  Container(

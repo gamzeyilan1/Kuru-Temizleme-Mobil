@@ -1,8 +1,8 @@
-import 'package:app_theme/OrderConfirmPage.dart';
+import 'package:app_theme/screens/OrderConfirmPage.dart';
 import 'package:flutter/material.dart';
-import 'package:app_theme/HomePage.dart';
-import 'package:app_theme/OrderConfirmPage.dart';
-import 'package:app_theme/MorePage.dart';
+import 'package:app_theme/screens/HomePage.dart';
+import 'package:app_theme/screens/OrderConfirmPage.dart';
+import 'package:app_theme/screens/MorePage.dart';
 
 class OrderPage extends StatelessWidget {
   const OrderPage({Key? key}) : super(key: key);
@@ -35,6 +35,7 @@ class _orderPageState extends State<orderPage> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -50,7 +51,7 @@ class _orderPageState extends State<orderPage> {
           fontSize: 18,
           color: Colors.black,
           fontWeight: FontWeight.w700,
-          fontFamily: 'sfpro',
+
         ),),
       ),
       body: Container(
@@ -69,7 +70,7 @@ class _orderPageState extends State<orderPage> {
               fontSize: 15,
               color: Colors.black,
               fontWeight: FontWeight.w700,
-              fontFamily: 'sfpro',
+
             ),),
             SizedBox(height: 8,),
             Wrap(
@@ -98,7 +99,7 @@ class _orderPageState extends State<orderPage> {
               fontSize: 15,
               color: Colors.black,
               fontWeight: FontWeight.w700,
-              fontFamily: 'sfpro',
+
             ),),
             SizedBox(height: 8,),
             DropdownButton <String> (
@@ -114,7 +115,7 @@ class _orderPageState extends State<orderPage> {
               fontSize: 15,
               color: Colors.black,
               fontWeight: FontWeight.w700,
-              fontFamily: 'sfpro',
+
             ),),
             SizedBox(height: 8,),
         TextField(
@@ -140,7 +141,7 @@ class _orderPageState extends State<orderPage> {
               fontSize: 14,
               color: Colors.grey,
               fontWeight: FontWeight.w500,
-              fontFamily: 'sfpro',
+
             ),),
             SizedBox(height: 20,),
             InkWell(
@@ -179,7 +180,7 @@ class _orderPageState extends State<orderPage> {
             fontSize: 14,
             color: Colors.black,
             fontWeight: FontWeight.w500,
-            fontFamily: 'sfpro',
+
           ),
         ),
       );
@@ -248,7 +249,7 @@ class _orderPageState extends State<orderPage> {
           fontSize: 12,
           color: Colors.grey,
           fontWeight: FontWeight.w400,
-          fontFamily: 'sfpro',), ),
+         ), ),
       ],
     );
 

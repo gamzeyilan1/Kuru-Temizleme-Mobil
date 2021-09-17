@@ -1,6 +1,6 @@
-import 'package:app_theme/EditProfilePage.dart';
+import 'package:app_theme/screens/EditProfilePage.dart';
 import 'package:flutter/material.dart';
-import 'package:app_theme/MorePage.dart';
+import 'package:app_theme/screens/MorePage.dart';
 
 
 class ProfilePage extends StatelessWidget {
@@ -40,7 +40,7 @@ class _profilePageState extends State<profilePage> {
           fontSize: 18,
           color: Colors.black,
           fontWeight: FontWeight.w700,
-          fontFamily: 'sfpro',
+
         ),),
       ),
       body: Container(

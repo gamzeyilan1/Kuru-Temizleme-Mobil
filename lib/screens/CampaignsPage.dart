@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app_theme/MorePage.dart';
+import 'package:app_theme/screens/MorePage.dart';
 
 class CampaignsPage extends StatelessWidget {
   const CampaignsPage({Key? key}) : super(key: key);
@@ -39,7 +39,7 @@ class _campaignsPageState extends State<campaignsPage> {
           fontSize: 18,
           color: Colors.black,
           fontWeight: FontWeight.w700,
-          fontFamily: 'sfpro',
+
         ),),
       ),
       body: Container(

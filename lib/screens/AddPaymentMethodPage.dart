@@ -1,27 +1,27 @@
+import 'package:app_theme/screens/PaymentMethodsPage.dart';
 import 'package:flutter/material.dart';
-import 'package:app_theme/HomePage.dart';
-import 'package:app_theme/MorePage.dart';
 
-class OrderHistoryPage extends StatelessWidget {
-  const OrderHistoryPage({Key? key}) : super(key: key);
+
+class AddPaymentMethodPage extends StatelessWidget {
+  const AddPaymentMethodPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: orderHistoryPage(),
+      home: addPaymentMethodPage(),
     );
   }
 }
 
-class orderHistoryPage extends StatefulWidget {
-  const orderHistoryPage({Key? key}) : super(key: key);
+class addPaymentMethodPage extends StatefulWidget {
+  const addPaymentMethodPage({Key? key}) : super(key: key);
 
   @override
-  _orderHistoryPageState createState() => _orderHistoryPageState();
+  _addPaymentMethodPageState createState() => _addPaymentMethodPageState();
 }
 
-class _orderHistoryPageState extends State<orderHistoryPage> {
+class _addPaymentMethodPageState extends State<addPaymentMethodPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,16 +33,15 @@ class _orderHistoryPageState extends State<orderHistoryPage> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios),
           color: Colors.green,
-          onPressed: openMorePage,
+          onPressed: openPaymentMethodPage,
         ),
 
-        title: Text("Önceki Siparişlerim", style: TextStyle(
+        title: Text("Ödeme Metodu Ekle", style: TextStyle(
           fontSize: 18,
           color: Colors.black,
           fontWeight: FontWeight.w700,
-          fontFamily: 'sfpro',
-        ),),
 
+        ),),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -55,7 +54,8 @@ class _orderHistoryPageState extends State<orderHistoryPage> {
       ),
     );
   }
-  void openMorePage(){
-    Navigator.push(context, MaterialPageRoute(builder: (context) => MorePage()));
+  void openPaymentMethodPage(){
+    Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentMethodsPage()));
   }
 }
+

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app_theme/MorePage.dart';
+import 'package:app_theme/screens/MorePage.dart';
 
 class TermsAndConditionsPage extends StatelessWidget {
   const TermsAndConditionsPage({Key? key}) : super(key: key);
@@ -39,7 +39,7 @@ class _termsAndConditionsPageState extends State<termsAndConditionsPage> {
           fontSize: 18,
           color: Colors.black,
           fontWeight: FontWeight.w700,
-          fontFamily: 'sfpro',
+
         ),),
       ),
       body: Container(
@@ -57,7 +57,7 @@ class _termsAndConditionsPageState extends State<termsAndConditionsPage> {
             fontSize: 18,
             color: Colors.black,
             fontWeight: FontWeight.w700,
-            fontFamily: 'sfpro',
+
           ),),
           SizedBox(height: 8,),
           Padding(
@@ -66,7 +66,7 @@ class _termsAndConditionsPageState extends State<termsAndConditionsPage> {
               fontSize: 15,
               color: Colors.black,
               fontWeight: FontWeight.w500,
-              fontFamily: 'sfpro',
+
             ),),),
 
           SizedBox(height: 8,),
@@ -74,7 +74,7 @@ class _termsAndConditionsPageState extends State<termsAndConditionsPage> {
             fontSize: 18,
             color: Colors.black,
             fontWeight: FontWeight.w700,
-            fontFamily: 'sfpro',
+
           ),),
           SizedBox(height: 8,),
           Padding(
@@ -83,7 +83,7 @@ class _termsAndConditionsPageState extends State<termsAndConditionsPage> {
               fontSize: 15,
               color: Colors.black,
               fontWeight: FontWeight.w500,
-              fontFamily: 'sfpro',
+
             ),),),
           SizedBox(height: 8,),
         ],

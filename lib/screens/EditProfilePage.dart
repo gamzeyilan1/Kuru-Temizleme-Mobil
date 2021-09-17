@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app_theme/ProfilePage.dart';
+import 'package:app_theme/screens/ProfilePage.dart';
 
 class EditProfilePage extends StatelessWidget {
   const EditProfilePage({Key? key}) : super(key: key);
@@ -38,7 +38,7 @@ class _editProfilePageState extends State<editProfilePage> {
           fontSize: 18,
           color: Colors.black,
           fontWeight: FontWeight.w700,
-          fontFamily: 'sfpro',
+
         ),),
       ),
       body: Container(

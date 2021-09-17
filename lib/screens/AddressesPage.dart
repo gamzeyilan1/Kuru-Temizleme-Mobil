@@ -1,7 +1,7 @@
-import 'package:app_theme/AddNewAddressPage.dart';
+import 'package:app_theme/screens/AddNewAddressPage.dart';
 import 'package:flutter/material.dart';
-import 'package:app_theme/HomePage.dart';
-import 'package:app_theme/MorePage.dart';
+import 'package:app_theme/screens/HomePage.dart';
+import 'package:app_theme/screens/MorePage.dart';
 
 class AddressesPage extends StatelessWidget {
   const AddressesPage({Key? key}) : super(key: key);
@@ -41,7 +41,7 @@ class _addressesPageState extends State<addressesPage> {
           fontSize: 18,
           color: Colors.black,
           fontWeight: FontWeight.w700,
-          fontFamily: 'sfpro',
+
         ),),
         actions: [
           IconButton(
@@ -115,7 +115,7 @@ class _addressesPageState extends State<addressesPage> {
                         fontSize: 15,
                         color: Colors.black,
                         fontWeight: FontWeight.w700,
-                        fontFamily: 'sfpro',
+
                       ),),
                       Container(
                         width: MediaQuery.of(context).size.width*0.8,
@@ -123,7 +123,7 @@ class _addressesPageState extends State<addressesPage> {
                         fontSize: 15,
                         color: Colors.black,
                         fontWeight: FontWeight.w500,
-                        fontFamily: 'sfpro',
+
                       ),),),
                     ], ),
 

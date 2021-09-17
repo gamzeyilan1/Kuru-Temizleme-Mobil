@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app_theme/StyleScheme.dart';
-import 'package:app_theme/LoginPage.dart';
+import 'package:app_theme/screens/LoginPage.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -25,6 +24,7 @@ class _signUpPageState extends State<signUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
         body: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
@@ -55,7 +55,7 @@ class _signUpPageState extends State<signUpPage> {
                         fontSize: 30,
                         color: Colors.green,
                         fontWeight: FontWeight.w700,
-                        fontFamily: 'sfpro',
+
                       ),),
                       SizedBox(height: 10, ),
                       TextField(
@@ -94,7 +94,7 @@ class _signUpPageState extends State<signUpPage> {
                                 color: Colors.white,
                                 fontSize: 22,
                                 fontWeight: FontWeight.w700,
-                                fontFamily: 'sfpro',
+
                               ),),
                             )
                         ),
@@ -110,7 +110,7 @@ class _signUpPageState extends State<signUpPage> {
                   Text("Hesabınız var mı?", style: TextStyle(
                     color: Colors.grey,
                     fontSize: 16,
-                    fontFamily: 'sfpro',
+
                   ),),
                   SizedBox(width: 5,),
                   InkWell(
