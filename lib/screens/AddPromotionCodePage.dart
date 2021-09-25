@@ -44,13 +44,7 @@ class _addPromotionCodePageState extends State<addPromotionCodePage> {
         ),),
       ),
       body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("asset/images/bg.png"),
-              fit: BoxFit.fill,
 
-            )
-        ),
         child: Align(
           alignment: Alignment.center,
           child:
@@ -67,6 +61,10 @@ class _addPromotionCodePageState extends State<addPromotionCodePage> {
           ),),
           SizedBox(height: 20,),
           TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Lütfen bilgi girin.';
+              }},
             decoration: const InputDecoration(
               labelText: 'Promosyon kodunuzu girin',
             ),
@@ -74,9 +72,7 @@ class _addPromotionCodePageState extends State<addPromotionCodePage> {
               // This optional block of code can be used to run
               // code when the user saves the form.
             },
-            validator: (String? value) {
-              return (value != null && value.contains('@')) ? 'Do not use the @ char.' : null;
-            },
+
           ),
              SizedBox(height: 460,),
              Row(

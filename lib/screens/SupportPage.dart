@@ -43,6 +43,7 @@ class _supportPageState extends State<supportPage> {
 
     }
     return Scaffold(
+
       appBar: AppBar(
 
         backgroundColor: Colors.transparent,
@@ -83,18 +84,16 @@ class _supportPageState extends State<supportPage> {
       ),
       body: Container(
         padding: EdgeInsets.all(20),
-        decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("asset/images/bg.png"),
-              fit: BoxFit.fill,
 
-            )
-        ),
         width: MediaQuery.of(context).size.width,
         child: Column(
           children: [
             SizedBox(height: 20,),
-            TextField(
+            TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Lütfen bilgi girin.';
+                }},
               decoration: const InputDecoration(
                 hintText: 'Görüşlerinizi bildirin.',
               ),

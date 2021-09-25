@@ -35,6 +35,7 @@ class _orderConfirmPageState extends State<orderConfirmPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -54,13 +55,7 @@ class _orderConfirmPageState extends State<orderConfirmPage> {
         ),),
       ),
       body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("asset/images/bg.png"),
-              fit: BoxFit.fill,
 
-            )
-        ),
         padding: EdgeInsets.all(20),
         child:  Column(
           children: [

@@ -51,20 +51,20 @@ class _TotalWidgetState extends State<TotalWidget> {
                 padding: EdgeInsets.only(
                   right: 20,
                 ),
-                // child:
-                // ValueListenableBuilder(
-                //   valueListenable: total,
-                //   builder: (context, total, child){
-                //   return Text(
-                //   "$total",
-                //   style: TextStyle(
-                //     color: Colors.green,
-                //     fontSize: 18,
-                //     fontWeight: FontWeight.w700,
-                //   ),
-                // ); },
-                //
-                // ),
+                child:
+                ValueListenableBuilder(
+                  valueListenable: total,
+                  builder: (context, total, child){
+                  return Text(
+                  "$total",
+                  style: TextStyle(
+                    color: Colors.green,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ); },
+
+                ),
 
               ),
             ],

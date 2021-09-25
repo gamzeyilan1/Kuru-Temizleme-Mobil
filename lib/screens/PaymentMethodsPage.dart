@@ -26,6 +26,7 @@ class _paymentMethodsPageState extends State<paymentMethodsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -44,13 +45,7 @@ class _paymentMethodsPageState extends State<paymentMethodsPage> {
         ),),
       ),
       body:  Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("asset/images/bg.png"),
-              fit: BoxFit.fill,
 
-            )
-        ),
         child:
             Align(
               alignment: FractionalOffset.bottomCenter,

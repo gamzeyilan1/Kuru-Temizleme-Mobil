@@ -52,13 +52,7 @@ class _addressesPageState extends State<addressesPage> {
         ],
       ),
       body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("asset/images/bg.png"),
-              fit: BoxFit.fill,
 
-            )
-        ),
             child: ListView(
 
           children: [

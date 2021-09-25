@@ -54,6 +54,7 @@ class _morePageState extends State<morePage> {
         break;
     }
     return Scaffold(
+
       resizeToAvoidBottomInset: false, // set it to false
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -74,13 +75,7 @@ class _morePageState extends State<morePage> {
 
       ),
       body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("asset/images/bg.png"),
-              fit: BoxFit.fill,
 
-            )
-        ),
         child: Column(
           children: [
             Row(

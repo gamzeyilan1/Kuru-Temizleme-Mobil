@@ -1,6 +1,7 @@
 import 'package:app_theme/screens/OrderConfirmPage.dart';
 import 'package:flutter/material.dart';
 import 'package:app_theme/screens/HomePage.dart';
+import '../widgets/DateWidget.dart';
 import 'package:app_theme/screens/OrderConfirmPage.dart';
 import 'package:app_theme/screens/MorePage.dart';
 
@@ -35,6 +36,7 @@ class _orderPageState extends State<orderPage> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -55,13 +57,7 @@ class _orderPageState extends State<orderPage> {
         ),),
       ),
       body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("asset/images/bg.png"),
-              fit: BoxFit.fill,
 
-            )
-        ),
         padding: EdgeInsets.all(15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,14 +76,7 @@ class _orderPageState extends State<orderPage> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      dateWidget("Pazartesi", "09.00-16.00", true),
-                      dateWidget("Salı", "09.00-16.00", false),
-                      dateWidget("Çarşamba", "09.00-16.00", false),
-                      dateWidget("Perşembe", "09.00-16.00", false),
-                      dateWidget("Cuma", "09.00-16.00", false),
-                      dateWidget("Pazartesi", "09.00-16.00", false),
-                      dateWidget("Salı", "09.00-16.00", false),
-                    ],
+                      DateWidget(), ],
                   ),
                 ),
 
@@ -118,7 +107,11 @@ class _orderPageState extends State<orderPage> {
 
             ),),
             SizedBox(height: 8,),
-        TextField(
+        TextFormField(
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Lütfen bilgi girin.';
+            }},
           decoration: const InputDecoration(
               hintText: 'Sipariş notunuzu girin',
           ),
@@ -184,37 +177,7 @@ class _orderPageState extends State<orderPage> {
           ),
         ),
       );
-  InkWell dateWidget(String day, String hour, bool isActive ){
-    var _isActive = isActive;
-    return InkWell(
-    onTap: () {
-    setState(()
-    {_isActive = !_isActive; }
-    );
-    },
-      child: Container(
-        margin: EdgeInsets.only(right: 10),
-        padding: EdgeInsets.all(20),
 
-        decoration: BoxDecoration(
-          color:(_isActive) ? Colors.green: Colors.grey.withOpacity(0.5),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(day, style: TextStyle(
-            color: (_isActive) ? Colors.white : Colors.black,
-            fontSize: 15,
-          ), ),
-          Text(hour, style: TextStyle(
-            color: (_isActive) ? Colors.white : Colors.black,
-            fontSize: 15,
-          ), ),
-          ],
-        ),
-      ),
-    );
-  }
 
   Column categoryWidget(String img, String name, bool isActive){
 

@@ -1,8 +1,14 @@
+import 'package:app_theme/blocs/form_bloc.dart';
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 import 'package:app_theme/screens/SignUpPage.dart';
 import 'package:app_theme/screens/HomePage.dart';
-//
+import '../blocs/form_bloc.dart';
+import '../providers/login_provider.dart';
+import '../mixins/helper.dart';
+import 'dart:developer';
+
+
 // class LoginPage extends StatelessWidget {
 //   const LoginPage({Key? key}) : super(key: key);
 //
@@ -23,16 +29,15 @@ class LoginPage extends StatefulWidget {
 }
 
 class _loginPageState extends State<LoginPage> {
+
   @override
   Widget build(BuildContext context) {
+    final FormBloc formBloc = LoginProvider.of(context);
+
     return Scaffold(
        resizeToAvoidBottomInset: false,
-body: Container(
-  decoration: BoxDecoration(
-      image: DecorationImage(
-          image: AssetImage("asset/images/bg.png")
-      )
-  ),
+       body: Container(
+
   padding: EdgeInsets.all(20),
   child: Column(
 
@@ -49,10 +54,12 @@ body: Container(
         ),
       ),
       Expanded(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+
+          child: Column(
+             mainAxisAlignment: MainAxisAlignment.center,
+             crossAxisAlignment: CrossAxisAlignment.start,
+
+          children: <Widget> [
             Text("Hoşgeldiniz!", style: TextStyle(
                fontSize: 30,
                color: Colors.green,
@@ -64,47 +71,31 @@ body: Container(
               fontSize: 20,
               fontWeight: FontWeight.w500,
             ),),
-            SizedBox(height: 10, ),
-            TextField(
-              decoration: InputDecoration(
-                labelText: "Email"
-              ),
-            ),
-            TextField(
-              decoration: InputDecoration(
-                labelText: "Şifre"
-              ),
-            ),
-            SizedBox(height: 3, ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("Şifrenizi mi unuttunuz?", style: TextStyle(
-                  color: Colors.grey,
-                ),)
+            Form(
+              child: Column(
+                children: <Widget> [
+                  _emailField(formBloc),
+                  _passwordField(formBloc),
+                  Container(
+                    width: 300,
+                    height: 35,
+                    child: Helper().errorMessage(formBloc),
+                  ),
+                //  Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //     GestureDetector(
+                //   onTap: () => Navigator.pushNamed('/signup');
+                // Text("Şifrenizi mi unuttunuz?", style: TextStyle(
+                //   color: Colors.grey,
+                // ),)),
+                  _buttonField(formBloc),
               ],
             ),
-            SizedBox(height: 25,),
-            InkWell(
-              onTap: openHomePage,
-              child: Container(
-                padding: EdgeInsets.symmetric(vertical: 15),
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(40)),
-                  color: Colors.green,
-                ),
-                child: Center(
-                  child: Text("GİRİŞ", style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w700,
-
-                  ),),
-                )
-              ),
             ),
-            SizedBox(height: 20,),
+            ],
+    ), ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -174,17 +165,13 @@ body: Container(
                   )
                 ),
               ],
-            )
-          ],
-        )
-
-      ),
+            ),
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text("Hesabınız mı yok?", style: TextStyle(
-              color: Colors.grey,
-              fontSize: 16,
+            color: Colors.grey,
+            fontSize: 16,
 
           ),),
           SizedBox(width: 5,),
@@ -201,12 +188,15 @@ body: Container(
       ),
       SizedBox(
         height: 10,
-      )
-    ],
-  ),
-)
-    );
+      ),
+          ],),
+
+      ),
+
+  );
   }
+
+
   void openSignUpPage() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => SignUpPage()));
@@ -215,4 +205,74 @@ body: Container(
  void openHomePage(){
     Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
  }
+
+  StreamBuilder _buttonField (FormBloc bloc) {
+   return StreamBuilder <bool>(
+
+      stream: bloc.submitValidForm,
+      builder: (context, snapshot){
+        return Container(
+          padding: EdgeInsets.symmetric(vertical: 15),
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(40)),
+            color: Colors.green,
+          ),
+          child: Center(
+            child: InkWell(
+              onTap: () {
+                if(snapshot.hasError) {
+                  print(snapshot.error);
+                  return null;
+                }
+              },
+              child: Text("GİRİŞ", style: TextStyle(
+                color: Colors.white,
+                fontSize: 22,
+                fontWeight: FontWeight.w700,
+
+              ),),
+            ),
+          ),
+        );
+      },);
+  }
+
+  StreamBuilder _emailField (FormBloc bloc) {
+    return StreamBuilder <String> (
+      stream: bloc.email,
+      builder: (context, snapshot) {
+        return TextField (
+          keyboardType: TextInputType.emailAddress,
+          decoration: InputDecoration (
+            labelText: 'Email',
+            errorText: snapshot.error.toString(),
+          ),
+          onChanged: bloc.changeEmail,
+        );
+      },
+    );
+  }
+
+  StreamBuilder _passwordField (FormBloc bloc) {
+    return StreamBuilder <String> (
+      stream: bloc.password,
+      builder: (context, snapshot) {
+        return TextField (
+          obscureText: true,
+          onChanged: bloc.changePassword,
+          maxLength: 20,
+          decoration: InputDecoration (
+            labelText: 'Password',
+            errorText: snapshot.error.toString(),
+          ),
+        );
+      },
+    );
+  }
+
+
+
+
+
 }

@@ -61,6 +61,7 @@ class _pricePageState extends State<pricePage> {
         break;
     }
     return Scaffold(
+
       resizeToAvoidBottomInset: false, // set it to false
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -90,11 +91,7 @@ class _pricePageState extends State<pricePage> {
         ],
       ),
       body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-          image: AssetImage("asset/images/bg.png"),
-          fit: BoxFit.fill,
-        )),
+
         child: Stack(
           children: <Widget>[
             Column(
@@ -119,7 +116,7 @@ class _pricePageState extends State<pricePage> {
             new Positioned(
                 left: 0,
                 right: 0,
-                top: 480.0,
+                top: 550.0,
                 child: new Container(
                   width: MediaQuery.of(context).size.width,
                   height: 150.0,

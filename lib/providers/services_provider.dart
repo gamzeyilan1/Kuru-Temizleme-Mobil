@@ -52,20 +52,3 @@ class Services extends ChangeNotifier{
 
 }
 
-class SelectedServices extends ChangeNotifier{
-  int _itemCounter = 0;
-  double total = 0;
-  void addToBasket(widget){
-    this._itemCounter++;
-    total += widget.price;
-    notifyListeners();
-  }
-
-  void removeFromBasket (widget){
-    this._itemCounter--;
-    total -= widget.price;
-    notifyListeners();
-  }
-  int getItemCounter() => _itemCounter;
-
-}

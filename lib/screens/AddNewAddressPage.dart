@@ -1,6 +1,7 @@
 import 'package:app_theme/screens/AddressesPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 class AddNewAddressPage extends StatelessWidget {
   const AddNewAddressPage({Key? key}) : super(key: key);
 
@@ -12,6 +13,7 @@ class AddNewAddressPage extends StatelessWidget {
     );
   }
 }
+
 class addNewAddressPage extends StatefulWidget {
   const addNewAddressPage({Key? key}) : super(key: key);
 
@@ -21,6 +23,7 @@ class addNewAddressPage extends StatefulWidget {
 
 class _addNewAddressPageState extends State<addNewAddressPage> {
   final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,138 +38,139 @@ class _addNewAddressPageState extends State<addNewAddressPage> {
           color: Colors.green,
           onPressed: openAddressesPage,
         ),
-        title: Text("Adres Ekle", style: TextStyle(
-          fontSize: 18,
-          color: Colors.black,
-          fontWeight: FontWeight.w700,
-
-        ),),
-
+        title: Text(
+          "Adres Ekle",
+          style: TextStyle(
+            fontSize: 18,
+            color: Colors.black,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
       ),
       body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("asset/images/bg.png"),
-              fit: BoxFit.fill,
 
-            )
-        ),
-      child: Form(
+        child: Form(
+          key: _formKey,
+          child: Center(
+            child: Column(
+              children: <Widget>[
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.80,
+                  padding: EdgeInsets.all(10),
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Lütfen bilgi girin.';
+                          }
+                        },
+                        decoration: const InputDecoration(
+                          labelText: 'İl',
+                        ),
+                        onSaved: (String? value) {
+                          // This optional block of code can be used to run
+                          // code when the user saves the form.
+                        },
 
-        key: _formKey,
-        child:
-        Center(
-        child: Column(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width*0.80,
-            padding: EdgeInsets.all(10),
-            child:
-           Column(
-           children: [
-           TextFormField(
-           decoration: const InputDecoration(
-           labelText: 'İl',
-          ),
-    onSaved: (String? value) {
-    // This optional block of code can be used to run
-    // code when the user saves the form.
-    },
-    validator: (String? value) {
-    return (value != null && value.contains('@')) ? 'Do not use the @ char.' : null;
-    },
-    ),
-           TextFormField(
-           decoration: const InputDecoration(
-           labelText: 'İlçe',
-          ),
-    onSaved: (String? value) {
-    // This optional block of code can be used to run
-    // code when the user saves the form.
-    },
-    validator: (String? value) {
-    return (value != null && value.contains('@')) ? 'Do not use the @ char.' : null;
-    },
-    ),
-           TextFormField(
-           decoration: const InputDecoration(
-           labelText: 'Adres',
-          ),
-    onSaved: (String? value) {
-    // This optional block of code can be used to run
-    // code when the user saves the form.
-    },
-    validator: (String? value) {
-    return (value != null && value.contains('@')) ? 'Do not use the @ char.' : null;
-    },
-    ),
-           TextFormField(
-           decoration: const InputDecoration(
-           labelText: 'Adres Adı',
-          ),
-    onSaved: (String? value) {
-    // This optional block of code can be used to run
-    // code when the user saves the form.
-    },
-    validator: (String? value) {
-    return (value != null && value.contains('@')) ? 'Do not use the @ char.' : null;
-    },
-    ),
-
-           ],
-           ),
-
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width*0.80,
-            padding: EdgeInsets.all(10),
-            child: Align(
-              alignment: FractionalOffset.bottomCenter,
-              child:  InkWell(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) =>AddressesPage()));
-              },
-              child: Container(
-                padding: EdgeInsets.all(5),
-                height: 50,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  color: Colors.green,
-                ),
-                child: Center(
-                    child:
-                    RichText(
-
-                      text: TextSpan(
-
-                        children: [
-                          TextSpan(
-                            text: "Ekle",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w700,
-
-                            ),
-                          ),
-                        ],
                       ),
-                    )
+                      TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Lütfen bilgi girin.';
+                          }
+                        },
+                        decoration: const InputDecoration(
+                          labelText: 'İlçe',
+                        ),
+                        onSaved: (String? value) {
+                          // This optional block of code can be used to run
+                          // code when the user saves the form.
+                        },
+
+                      ),
+                      TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Lütfen bilgi girin.';
+                          }
+                        },
+                        decoration: const InputDecoration(
+                          labelText: 'Adres',
+                        ),
+                        onSaved: (String? value) {
+                          // This optional block of code can be used to run
+                          // code when the user saves the form.
+                        },
+
+                      ),
+                      TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Lütfen bilgi girin.';
+                          }
+                        },
+                        decoration: const InputDecoration(
+                          labelText: 'Adres Adı',
+                        ),
+                        onSaved: (String? value) {
+                          // This optional block of code can be used to run
+                          // code when the user saves the form.
+                        },
+
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-
-            ), ),),
-    // Add TextFormFields and ElevatedButton here.
-    ],
-      ),),
-
-
-    ), ),);
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.80,
+                  padding: EdgeInsets.all(10),
+                  child: Align(
+                    alignment: FractionalOffset.bottomCenter,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AddressesPage()));
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(5),
+                        height: 50,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          color: Colors.green,
+                        ),
+                        child: Center(
+                            child: RichText(
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                text: "Ekle",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            ],
+                          ),
+                        )),
+                      ),
+                    ),
+                  ),
+                ),
+                // Add TextFormFields and ElevatedButton here.
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
-  void openAddressesPage(){
-    Navigator.push(context, MaterialPageRoute(builder: (context) => AddressesPage()));
+
+  void openAddressesPage() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => AddressesPage()));
   }
-
-
-
 }

@@ -24,13 +24,10 @@ class _signUpPageState extends State<signUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       resizeToAvoidBottomInset: false,
         body: Container(
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage("asset/images/bg.png")
-              )
-          ),
+
           padding: EdgeInsets.all(20),
           child: Column(
 
@@ -56,24 +53,42 @@ class _signUpPageState extends State<signUpPage> {
                         color: Colors.green,
                         fontWeight: FontWeight.w700,
 
-                      ),),
+                      ),
+                      ),
                       SizedBox(height: 10, ),
-                      TextField(
+                      TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Lütfen bilgi girin.';
+                          }},
+
                         decoration: InputDecoration(
                             labelText: "İsim"
                         ),
                       ),
-                      TextField(
+                      TextFormField(
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Lütfen bilgi girin.';
+                            }},
                         decoration: InputDecoration(
                             labelText: "Telefon"
                         ),
                       ),
-                      TextField(
+                      TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Lütfen bilgi girin.';
+                          }},
                         decoration: InputDecoration(
                             labelText: "Email"
                         ),
                       ),
-                      TextField(
+                      TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Lütfen bilgi girin.';
+                          }},
                         decoration: InputDecoration(
                             labelText: "Şifre"
                         ),

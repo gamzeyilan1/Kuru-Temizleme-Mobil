@@ -23,6 +23,7 @@ class _editProfilePageState extends State<editProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -42,13 +43,7 @@ class _editProfilePageState extends State<editProfilePage> {
         ),),
       ),
       body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("asset/images/bg.png"),
-              fit: BoxFit.fill,
 
-            )
-        ),
      child:  Form(
         child:
         Center(
@@ -61,6 +56,10 @@ class _editProfilePageState extends State<editProfilePage> {
                 Column(
                   children: [
                     TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Lütfen bilgi girin.';
+                        }},
                       decoration: const InputDecoration(
                         labelText: 'İsim & Soyisim',
                       ),
@@ -68,11 +67,13 @@ class _editProfilePageState extends State<editProfilePage> {
                         // This optional block of code can be used to run
                         // code when the user saves the form.
                       },
-                      validator: (String? value) {
-                        return (value != null && value.contains('@')) ? 'Do not use the @ char.' : null;
-                      },
+
                     ),
                     TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Lütfen bilgi girin.';
+                        }},
                       decoration: const InputDecoration(
                         labelText: 'E-mail',
                       ),
@@ -80,9 +81,7 @@ class _editProfilePageState extends State<editProfilePage> {
                         // This optional block of code can be used to run
                         // code when the user saves the form.
                       },
-                      validator: (String? value) {
-                        return (value != null && value.contains('@')) ? 'Do not use the @ char.' : null;
-                      },
+
                     ),
                     TextFormField(
                       decoration: const InputDecoration(
@@ -92,9 +91,10 @@ class _editProfilePageState extends State<editProfilePage> {
                         // This optional block of code can be used to run
                         // code when the user saves the form.
                       },
-                      validator: (String? value) {
-                        return (value != null && value.contains('@')) ? 'Do not use the @ char.' : null;
-                      },
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Lütfen bilgi girin.';
+                        }},
                     ),
 
                   ],

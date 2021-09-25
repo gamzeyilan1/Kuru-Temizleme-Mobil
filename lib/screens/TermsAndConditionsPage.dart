@@ -24,6 +24,7 @@ class _termsAndConditionsPageState extends State<termsAndConditionsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -43,13 +44,7 @@ class _termsAndConditionsPageState extends State<termsAndConditionsPage> {
         ),),
       ),
       body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("asset/images/bg.png"),
-              fit: BoxFit.fill,
 
-            )
-        ),
      child:  Column(
         children: [
           SizedBox(height: 8,),

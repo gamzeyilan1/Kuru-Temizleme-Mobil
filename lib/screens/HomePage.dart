@@ -50,7 +50,6 @@ class _homePageState extends State<homePage> {
     return Scaffold(
 
       appBar: AppBar(
-
         backgroundColor: Colors.transparent,
         elevation: 0,
         titleSpacing: 10,
@@ -91,13 +90,7 @@ class _homePageState extends State<homePage> {
 
       ),
       body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("asset/images/bg.png"),
-              fit: BoxFit.fill,
 
-            )
-        ),
         width: MediaQuery.of(context).size.width,
         child: Column(
           children: [
